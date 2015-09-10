@@ -1,0 +1,17 @@
+<h1>Edit!</h1>
+<a href="/">
+    <button>HOME</button>
+</a>
+
+<form action="/posts/{{_id}}/update" method="post">
+    <label for="posts">Thing:<br>
+        <input type="text" name="posts" id="posts" value="{{posts}}"/>
+    </label>
+    <br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<form action="/posts/{{_id}}/delete" method="post">
+    <input type="submit" value="DELETE"/>
+</form>

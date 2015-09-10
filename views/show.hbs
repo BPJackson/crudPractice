@@ -1,0 +1,36 @@
+
+{{#posts}}
+<div>
+  <a href="/">
+    <button>HOME!</button>
+  </a><br><br>
+  <div>
+    Thing: {{posts}}
+  </div><br>
+
+
+  {{#each comments}}
+  <form action="/posts/{{../_id}}/comments/delete" method="post">
+      <input type="submit" value="DELETE"/>
+      <!-- <input type="hidden" name="comment" value="{{this}}"> -->
+  </form>
+
+  {{this}}<br><br>
+
+  {{/each}}
+
+  <div>
+    Add Comment<br><br>
+    <form action="/posts/{{_id}}/comments" method="post">
+      Comment Text:<input type="text" name="comment">
+      <input type="submit">
+    </form>
+  </div><br>
+
+  <div>
+    <a href="/posts/{{_id}}/edit">
+      <button>EDIT</button>
+    </a>
+  </div>
+</div>
+{{/posts}}
