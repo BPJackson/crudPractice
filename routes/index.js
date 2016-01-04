@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var db = require('monk')('localhost/crudpuppies');
+var db = require('monk')('localhost/jobsly');
 var posts = db.get('posts');
-// var comments = db.get('comments');
+var comments = db.get('comments');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
